@@ -7,6 +7,7 @@ export default defineConfig({
   },
   rules: {
     "eslint/no-unused-vars": "error",
+    "react/react-in-jsx-scope": "off",
   },
   options: {
     typeAware: true,
