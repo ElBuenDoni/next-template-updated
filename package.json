@@ -2,23 +2,38 @@
   "name": "next-custom-template",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "lint:types": "oxlint --type-aware",
+    "type:check": "tsc --noEmit",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "check": "pnpm lint && pnpm format:check && pnpm type:check && pnpm build"
   },
   "dependencies": {
-    "next": "16.4.6",
-    "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@tailwindcss/turbopack": "4.3.3",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "tailwindcss": "4.3.3",
-    "typescript": "^5"
+    "@tailwindcss/turbopack": "^4.3.5",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "oxfmt": "^0.79.0",
+    "oxlint": "^1.94.0",
+    "oxlint-tsgolint": "^7.0.2008",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2"
   },
-  "packageManager": "pnpm@12.10.1"
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@12.21.0"
 }
